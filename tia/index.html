@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salão da Leidiani</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ffb6c1);
+      color: #333;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, #ffb6c1, #ff69b4);
+      border-bottom: 4px solid #ff1493;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: "Dancing Script", cursive;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow:
+        1px 1px 0 #ff69b4,
+        2px 2px 0 #ff1493,
+        3px 3px 0 #c71585,
+        4px 4px 0 #a52a8b;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ff1493;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ff1493;
+    }
+
+    .services-list, .depoimentos-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .service, .depoimento {
+      background: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .service h3, .depoimento h4 {
+      color: #ff69b4;
+      margin-top: 0;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    button {
+      background: #ff69b4;
+      color: white;
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #ff1493;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 1rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      padding: 1rem;
+      background: rgba(255,182,193,0.7);
+      text-align: center;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>✨ Salão da Leidiani ✨</h1>
+    <p>Realce sua beleza com estilo e carinho 💖</p>
+  </header>
+
+  <!-- SOBRE NÓS -->
+  <section>
+    <h2>Sobre Nós</h2>
+    <p>O Salão da Leidiani nasceu do sonho de transformar a beleza e a autoestima das nossas clientes. Com profissionais qualificados e um ambiente acolhedor, oferecemos serviços de qualidade com carinho e dedicação. 💇‍♀️💅</p>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section>
+    <h2>Nossos Serviços</h2>
+    <div class="services-list">
+      <div class="service">
+        <h3>Escova e Brilho</h3>
+        <p>Escova modelada com finalização especial para brilho intenso.</p>
+        <p><strong>A partir de R$ 70</strong></p>
+      </div>
+      <div class="service">
+        <h3>Maquiagem</h3>
+        <p>Maquiagem profissional para festas, eventos e ensaios.</p>
+        <p><strong>A partir de R$ 100</strong></p>
+      </div>
+      <div class="service">
+        <h3>Unhas Decoradas</h3>
+        <p>Arte nas unhas com bom gosto e durabilidade.</p>
+        <p><strong>A partir de R$ 40</strong></p>
+      </div>
+      <div class="service">
+        <h3>Cortes Modernos</h3>
+        <p>Cortes atualizados com as últimas tendências de beleza.</p>
+        <p><strong>A partir de R$ 60</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section>
+    <h2>Galeria</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://media.gettyimages.com/id/1281532877/pt/foto/young-woman-at-a-hair-salon-hairdresser-using-hairdryer.jpg?s=612x612&w=gi&k=20&c=UnjZzRqB4eo9iiwSBfnAP58NeJpLKzEqL4dtO0ljjP4=" data-servico="Escova e Brilho" />
+        <span>Escova e Brilho</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.ytimg.com/vi/_JoRRHvivI0/maxresdefault.jpg" data-servico="Maquiagem" />
+        <span>Maquiagem</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr3PEF5LOGjsJIDlHy7Az8TgmN0THe7GBW29fBv08xPnzod5tykgoLIGY&s" data-servico="Cortes Modernos" />
+        <span>Cortes Modernos</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6UNLUjHVNZ_tVAySjulBgOldfWZ5GBjTVEWWN5dYUnudx_izrZFvQ9GI&s" data-servico="Unhas Decoradas" />
+        <span>Unhas Decoradas</span>
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- LOCALIZAÇÃO -->
+  <section>
+    <h2>Onde Estamos</h2>
+    <p>Rua francisco vitor de assis, 925 - Esplanada - Caratinga-mg</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3754.516024171438!2d-42.1299481!3d-19.7810357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69052fae85d1cd%3A0x0!2sRua%20Francisco%20Vitor%20de%20Assis%2C%20Caratinga%20MG!5e0!3m2!1spt-BR!2sbr!4v1719500000000!5m2!1spt-BR!2sbr"></iframe>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Agendamento</h2>
+      <label>Seu Nome:
+        <input id="nomeCliente" type="text" required />
+      </label>
+      <label>Data:
+        <input id="dataAgendamento" type="date" required />
+      </label>
+      <label>Horário:
+        <input id="horaAgendamento" type="time" required min="08:00" max="18:00" />
+      </label>
+      <button onclick="enviarWhatsApp()">Agendar via WhatsApp</button>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Salão da Leidiani | Feito com amor 💖</footer>
+
+  <script>
+    const modal = document.getElementById('modal')
+    const modalTitle = document.getElementById('modalTitle')
+    let servicoSelecionado = ''
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        servicoSelecionado = img.dataset.servico
+        modalTitle.textContent = `Agendamento para ${servicoSelecionado}`
+        modal.style.display = 'flex'
+      })
+    })
+
+    function fecharModal() {
+      modal.style.display = 'none'
+    }
+
+    function enviarWhatsApp() {
+      const nome = document.getElementById('nomeCliente').value
+      const data = document.getElementById('dataAgendamento').value
+      const hora = document.getElementById('horaAgendamento').value
+      const texto = `Olá, gostaria de agendar ${servicoSelecionado} para ${data} às ${hora}. Nome: ${nome}.`
+      const link = `https://wa.me/5533999134069?text=Ol%C3%A1,%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Sal%C3%A3o%20da%20Leidiani!%20%F0%9F%98%8A´${encodeURIComponent(texto)}`
+      window.open(link, '_blank')
+    }
+  </script>
+</body>
+</html>
